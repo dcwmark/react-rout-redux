@@ -10,7 +10,7 @@
 1. npm install --save react-redux
 
 
-React Router v4
+## React Router v4
 
 /src/index.js
 ```javascript
@@ -42,7 +42,7 @@ import { Link, Route } from "react-router-dom";
 . . .
 ```
 
-React Redux
+## React Redux
 
 /src/index.js
 ```javascript
