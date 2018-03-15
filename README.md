@@ -24,3 +24,20 @@ ReactDOM.render(
 . . .
     </BrowserRouter>
 ```
+
+/src/App.js
+```javascript
+. . .
+import { Link, Route } from "react-router-dom";
+. . .
+            <li><Link to="/">Homes</Link></li>
+            <li><Link to="/comments">Comments</Link></li>
+            <li><Link to="/posts">Posts</Link></li>
+            <li><Link to="/todos">Todos</Link></li>
+. . .
+        <Route exact={ true } path="/" component={ Home }/>
+        <Route path="/comments" component={ Comments }/>
+        <Route path="/posts" component={ Posts }/>
+        <Route path="/todos" component={ Todos }/>
+. . .
+```
