@@ -1,6 +1,7 @@
 /* src/Components/Comments/index.js */
+'use strict';
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Comments extends Component {
     render() {

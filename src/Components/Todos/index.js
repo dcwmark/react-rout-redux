@@ -1,6 +1,7 @@
 /* src/Components/Todos/index.js */
+'use strict';
 
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Todos extends Component {
     render() {
