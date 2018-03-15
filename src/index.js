@@ -1,16 +1,20 @@
 /* src/index.js */
-'use strict';
+"use strict";
 
-import './index.css';
+import "./index.css";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
+import React from "react";
+import ReactDOM from "react-dom";
 
-import store from './States/Store'
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// react router v4
+import { BrowserRouter } from "react-router-dom"
+
+// react redux
+import { Provider } from "react-redux"
+
+import store from "./States/Store"
+import App from "./App";
+import registerServiceWorker from "./registerServiceWorker";
 
 ReactDOM.render(
     <BrowserRouter>
@@ -18,5 +22,5 @@ ReactDOM.render(
             <App />
         </Provider>
     </BrowserRouter>
-, document.getElementById('root'));
+, document.getElementById("root"));
 registerServiceWorker();
