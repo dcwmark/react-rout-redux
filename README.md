@@ -41,3 +41,34 @@ import { Link, Route } from "react-router-dom";
         <Route path="/todos" component={ Todos }/>
 . . .
 ```
+
+React Redux
+
+/src/index.js
+```javascript
+. . .
+import { Provider } from "react-redux"
+
+import store from "./States/Store"
+. . .
+ReactDOM.render(
+. . .
+        <Provider store={ store }>
+. . .
+        </Provider>
+. . .
+```
+
+/src/States/Store/index.js
+```javascript
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import logger from "redux-logger";
+import thunk from "redux-thunk";
+import promise from "redux-promise-middleware";
+
+const middleware = applyMiddleware(promise(), thunk, logger());
+
+const reducers = combineReducers({
+. . .
+export const store = createStore(reducers, middleware);
+```
