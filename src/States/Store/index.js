@@ -1,5 +1,5 @@
 /* src/States/Store/index.js */
-'use strict';
+"use strict";
 
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import logger from "redux-logger";
