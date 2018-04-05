@@ -14,15 +14,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-light">
-          <ul className="nav navbar-nav">
-
-            <li><Link to="/">Homes</Link></li>
-            <li><Link to="/comments">Comments</Link></li>
-            <li><Link to="/posts">Posts</Link></li>
-            <li><Link to="/todos">Todos</Link></li>
-
-          </ul>
+        <nav className="navbar navbar-default">
+          <div className="collapse navbar-collapse">
+              <ul className="nav navbar-nav">
+                <li><Link to="/">Homes</Link></li>
+                <li><Link to="/comments">Comments</Link></li>
+                <li><Link to="/posts">Posts</Link></li>
+                <li><Link to="/todos">Todos</Link></li>
+              </ul>
+            </div>
         </nav>
 
         <Route exact={ true } path="/" component={ Home }/>

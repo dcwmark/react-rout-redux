@@ -15,13 +15,13 @@ const initComments = {
 
 const commentsReducer = ( state = initComments, action ) => {
     const stateChanger = {
-        FETCH_COMMENT_PENDING: () => {
+        'FETCH_COMMENT_PENDING': () => {
             return {
                 ...state,
                 fetching: true
             };
         },
-        FETCH_COMMENT_FULLFILLED: () => {
+        'FETCH_COMMENT_FULLFILLED': () => {
             return {
                 ...state,
                 fetching: false,
@@ -29,7 +29,7 @@ const commentsReducer = ( state = initComments, action ) => {
                 comments: action.payload.data
             };
         },
-        FETCH_COMMENT_REJECTED: () => {
+        'FETCH_COMMENT_REJECTED': () => {
             return {
                 ...state,
                 fetching: false,
