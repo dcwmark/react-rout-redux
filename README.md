@@ -2,13 +2,12 @@
 1. cd react-rout-redux/
 1. npm install --save react-router-dom
 1. npm install --save react-bootsrap
-1. index.html --
-   copied
-   > https://react-bootstrap.github.io/getting-started/introduction
-   
-   > \<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 1. npm install --save react-redux
-
+1. npm install --save redux
+1. npm install --save redux-logger
+1. npm install --save redux-promise-middleware
+1. npm install --save redux-thunk
+1. npm install --save axios
 
 ## React Router v4
 
@@ -66,7 +65,7 @@ import logger from "redux-logger";
 import thunk from "redux-thunk";
 import promise from "redux-promise-middleware";
 
-const middleware = applyMiddleware(promise(), thunk, logger());
+const middleware = applyMiddleware(promise, thunk, logger;
 
 const reducers = combineReducers({
 . . .

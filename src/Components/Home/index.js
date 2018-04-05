@@ -1,7 +1,6 @@
 /* src/Components/Home/index.js */
-'use strict';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Home extends Component {
     render() {

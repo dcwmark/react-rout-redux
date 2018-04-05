@@ -1,15 +1,14 @@
 /* src/App.js */
-"use strict";
 
-import "./App.css";
+import './App.css';
 
-import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link, Route } from 'react-router-dom';
 
-import Home from "./Components/Home";
-import Comments from "./Components/Comments";
-import Posts from "./Components/Posts";
-import Todos from "./Components/Todos";
+import Home from './Components/Home';
+import Comments from './Components/Comments';
+import Posts from './Components/Posts';
+import Todos from './Components/Todos';
 
 class App extends Component {
   render() {
