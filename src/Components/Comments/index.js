@@ -12,10 +12,9 @@ class Comments extends Component {
     }
 
     render() {
-        console.log(this.props.comments);
         return (
             <div>
-                <h2>Comments</h2>
+                <h4>Comments</h4>
                 <ul className="list-group list-group-flush">
                     { this.props.comments.length > 0 && this.props.comments.map( each => (
                         <li className="list-group-item" key={each.id}>
@@ -29,7 +28,7 @@ class Comments extends Component {
 };
 
 const mapStateToProps = state => {
-    return { comments: state.comments };
+    return state.comments;
 };
 
 const mapDisptachToProps = {

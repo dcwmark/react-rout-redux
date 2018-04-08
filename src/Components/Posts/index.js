@@ -6,7 +6,7 @@ class Posts extends Component {
     render() {
         return (
             <div>
-                <h2>Posts</h2>
+                <h4>Posts</h4>
             </div>
         );
     }

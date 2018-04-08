@@ -7,7 +7,7 @@ import promise from 'redux-promise-middleware';
 
 import commentsReducer from '../Reducers/comments';
 
-const middleware = applyMiddleware(promise, thunk, logger);
+const middleware = applyMiddleware(promise(), thunk, logger);
 
 const reducers = combineReducers({
     comments: commentsReducer
