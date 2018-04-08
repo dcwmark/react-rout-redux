@@ -108,6 +108,7 @@ const mapDisptachToProps = {
 };
 
 export default connect(mapStateToProps, mapDisptachToProps)(Comments);
+```
 
 /src/States/Actions/comments.js
 ```javascript
