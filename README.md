@@ -71,3 +71,89 @@ const reducers = combineReducers({
 . . .
 export const store = createStore(reducers, middleware);
 ```
+
+## The Promise Way
+
+/src/Components/Comments/index.js
+```javascript
+import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import { fetchComments } from '../../States/Actions/comments';
+
+class Comments extends Component {
+
+    componentWillMount = () => {
+        this.props.fetchComments();
+    }
+
+. . .
+
+                <ul className="list-group list-group-flush">
+                    { this.props.comments.length > 0 && this.props.comments.map( each => (
+                        <li className="list-group-item" key={each.id}>
+                            {each.name}
+                        </li>
+                    ) ) }
+                </ul>
+
+. . .
+
+const mapStateToProps = state => {
+    return state.comments;
+};
+
+const mapDisptachToProps = {
+    fetchComments
+};
+
+export default connect(mapStateToProps, mapDisptachToProps)(Comments);
+
+/src/States/Actions/comments.js
+```javascript
+
+...
+
+export function fetchComments() {
+    return {
+        type: FETCH_COMMENT,
+        payload: axios.get('https://jsonplaceholder.typicode.com/comments')
+    };
+}
+
+```
+
+/src/States/Reducers/comments.js
+```javascript
+
+. . .
+
+const commentsReducer = ( state = initComments, action ) => {
+    const stateChanger = {
+
+        FETCH_COMMENT_FULFILLED: () => {
+            return {
+                ...state,
+                fetching: false,
+                fetched: true,
+                comments: action.payload.data
+            };
+        },
+. . .
+
+    return stateChanger.hasOwnProperty(action.type) ? stateChanger[action.type]() : state;
+};
+
+export default commentsReducer;
+
+```
+
+/src/States/Store/index.js
+```javascript
+. . .
+
+const reducers = combineReducers({
+    comments: commentsReducer
+
+. . .
+```
