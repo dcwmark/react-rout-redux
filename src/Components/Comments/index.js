@@ -18,7 +18,8 @@ class Comments extends Component {
                 <ul className="list-group list-group-flush">
                     { this.props.comments.length > 0 && this.props.comments.map( each => (
                         <li className="list-group-item" key={each.id}>
-                            {each.name}
+                            <p><b>Name:</b> <em>{each.name}</em></p>
+                            <p>{each.body}</p>
                         </li>
                     ) ) }
                 </ul>

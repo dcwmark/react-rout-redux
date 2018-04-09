@@ -1,39 +1,39 @@
-/* src/States/Reducers/comments.js */
+/* src/States/Reducers/posts.js */
 
 // import {
-//     FETCH_COMMENT_PENDING,
-//     FETCH_COMMENT_REJECTED,
-//     FETCH_COMMENT_FULFILLED
+//     FETCH_POST_FAILURE,
+//     FETCH_POST_PENDING,
+//     FETCH_POST_SUCCESS,
 // } from "../../Constants/actionTypes";
 
-const initComments = {
+const initPosts = {
     fetching: false,
     fetched: false,
-    comments: [],
+    posts: [],
     error: null
 };
 
-const commentsReducer = ( state = initComments, action ) => {
+const commentsReducer = ( state = initPosts, action ) => {
     const stateChanger = {
-        FETCH_COMMENT_PENDING: () => {
+        FETCH_POST_PENDING: () => {
             return {
                 ...state,
                 fetching: true
             };
         },
-        FETCH_COMMENT_FULFILLED: () => {
+        FETCH_POST_SUCCESS: () => {
             return {
                 ...state,
                 fetching: false,
                 fetched: true,
-                comments: action.payload.data
+                posts: action.payload.data
             };
         },
-        FETCH_COMMENT_REJECTED: () => {
+        FETCH_POST_FAILURE: () => {
             return {
                 ...state,
                 fetching: false,
-                error: action.payload.error
+                error: action.payload
             };
         },
     };

@@ -6,12 +6,13 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 
 import commentsReducer from '../Reducers/comments';
+import postsReducer from '../Reducers/posts';
 
 const middleware = applyMiddleware(promise(), thunk, logger);
 
 const reducers = combineReducers({
-    comments: commentsReducer
-    // posts: postsReducer,
+    comments: commentsReducer,
+    posts: postsReducer,
     // todos: todosReducer,
 });
 
