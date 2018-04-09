@@ -157,4 +157,106 @@ const reducers = combineReducers({
     comments: commentsReducer
 
 . . .
+
+import commentsReducer from '../Reducers/comments';
+
+. . .
+```
+
+## Nothing but the Thunk
+
+/src/Components/Posts/index.js
+```javascript
+
+. . .
+
+import { fetchPosts } from '../../States/Actions/posts';
+
+. . .
+
+class Posts extends Component {
+
+    componentWillMount = () => {
+        this.props.fetchPosts();
+    }
+
+. . .
+
+                    { this.props.posts.length > 0 && this.props.posts.map( each => (
+                        <li className="list-group-item" key={each.id}>
+                            <p><b>Title:</b> <em>{each.title}</em></p>
+                            <p>{each.body}</p>
+                        </li>
+                    ) ) }
+
+. . .
+
+const mapDisptachToProps = {
+    fetchPosts
+};
+
+export default connect(mapStateToProps, mapDisptachToProps)(Posts);
+```
+
+/src/States/Actions/posts.js
+```javascript
+import {
+    FETCH_POST_FAILURE,
+    FETCH_POST_PENDING,
+    FETCH_POST_SUCCESS,
+} from "../../Constants/actionTypes";
+
+. . .
+
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then( (res) => {
+                dispatch({
+                    type: FETCH_POST_SUCCESS,
+                    payload: res
+                })
+            })
+            .catch( (err) => {
+                dispatch({
+                    type: FETCH_POST_FAILURE,
+                    payload: err
+                })
+            })
+```
+
+/src/States/Reducers/posts.js
+```javascript
+
+. . .
+
+const postsReducer = ( state = initPosts, action ) => {
+    const stateChanger = {
+
+. . .
+
+        FETCH_POST_SUCCESS: () => {
+            return {
+                ...state,
+                fetching: false,
+                fetched: true,
+                posts: action.payload.data
+            };
+        },
+
+. . .
+
+```
+
+/src/States/Store/index.js
+```javascript
+. . .
+
+import postsReducer from '../Reducers/posts';
+
+. . .
+
+const reducers = combineReducers({
+    comments: commentsReducer,
+    posts: postsReducer,
+
+. . .
 ```

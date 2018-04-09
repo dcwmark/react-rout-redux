@@ -13,7 +13,7 @@ const initPosts = {
     error: null
 };
 
-const commentsReducer = ( state = initPosts, action ) => {
+const postsReducer = ( state = initPosts, action ) => {
     const stateChanger = {
         FETCH_POST_PENDING: () => {
             return {
@@ -40,4 +40,4 @@ const commentsReducer = ( state = initPosts, action ) => {
     return stateChanger.hasOwnProperty(action.type) ? stateChanger[action.type]() : state;
 };
 
-export default commentsReducer;
+export default postsReducer;
