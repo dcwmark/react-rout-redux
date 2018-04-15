@@ -1,3 +1,9 @@
+
+References:
+https://hashnode.com/post/simple-react-redux-app-civ45zywh03qdgc5327399ly0
+https://www.valentinog.com/blog/react-redux-tutorial-beginners/
+https://lorenstewart.me/2016/11/27/a-practical-guide-to-redux/
+
 1. npx create-react-app react-rout-redux
 1. cd react-rout-redux/
 1. npm install --save react-router-dom
