@@ -12,17 +12,17 @@ export function fetchPosts() {
     return (dispatch) => {
         dispatch({ type: FETCH_POST_PENDING });
         axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then( (res) => {
-                dispatch({
-                    type: FETCH_POST_SUCCESS,
-                    payload: res
-                })
+        .then( (res) => {
+            dispatch({
+                type: FETCH_POST_SUCCESS,
+                payload: res
             })
-            .catch( (err) => {
-                dispatch({
-                    type: FETCH_POST_FAILURE,
-                    payload: err
-                })
+        })
+        .catch( (err) => {
+            dispatch({
+                type: FETCH_POST_FAILURE,
+                payload: err
             })
+        })
     };
 }

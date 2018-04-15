@@ -7,13 +7,14 @@ import promise from 'redux-promise-middleware';
 
 import commentsReducer from '../Reducers/comments';
 import postsReducer from '../Reducers/posts';
+import todosReducer from '../Reducers/todos';
 
 const middleware = applyMiddleware(promise(), thunk, logger);
 
 const reducers = combineReducers({
     comments: commentsReducer,
     posts: postsReducer,
-    // todos: todosReducer,
+    todos: todosReducer,
 });
 
 const store = createStore(reducers, middleware);
