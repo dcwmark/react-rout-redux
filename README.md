@@ -275,3 +275,16 @@ const reducers = combineReducers({
 
 ...
 ```
+
+
+[ ~/Projects/workspace/javascript/react/react-rout-redux/build ]02:34 AM > surge
+
+   Running as dcwmark@gmail.com (Student)
+
+            project: /Users/entaroadun/Projects/workspace/javascript/react/react-rout-redux/build/
+         domain: react-rout-redux.surge.sh
+         upload: [====================] 100% eta: 0.0s (10 files, 1654370 bytes)
+            CDN: [====================] 100%
+             IP: 45.55.110.124
+
+   Success! - Published to react-rout-redux.surge.sh
