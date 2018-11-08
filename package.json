@@ -1,21 +1,17 @@
 {
-  "name": "react-rout-redux",
+  "name": "react-proxy",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "gh-deploy": "npm run build && gh-pages -d build"
-  },
+  "proxy": "http://localhost:5000/",
   "dependencies": {
     "ajv": "^6.4.0",
     "axios": "^0.18.0",
-    "bootstrap": "^4.1.1",
+    "bootstrap": "^3.3.7",
     "jquery": "^3.3.1",
     "popper": "^1.0.1",
+    "popper.js": "^1.14.3",
     "react": "^16.3.2",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
@@ -25,7 +21,10 @@
     "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.2.0"
   },
-  "devDependencies": {
-    "gh-pages": "^1.1.0"
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
