@@ -1,11 +1,11 @@
 
 References:
 
-https://hashnode.com/post/simple-react-redux-app-civ45zywh03qdgc5327399ly0
+[https://hashnode.com/post/simple-react-redux-app-civ45zywh03qdgc5327399ly0](https://hashnode.com/post/simple-react-redux-app-civ45zywh03qdgc5327399ly0)
 
-https://www.valentinog.com/blog/react-redux-tutorial-beginners/
+[https://www.valentinog.com/blog/react-redux-tutorial-beginners/](https://www.valentinog.com/blog/react-redux-tutorial-beginners/)
 
-https://lorenstewart.me/2016/11/27/a-practical-guide-to-redux/
+[https://lorenstewart.me/2016/11/27/a-practical-guide-to-redux/](https://lorenstewart.me/2016/11/27/a-practical-guide-to-redux/)
 
 1. npx create-react-app react-rout-redux
 1. cd react-rout-redux/
@@ -20,7 +20,9 @@ https://lorenstewart.me/2016/11/27/a-practical-guide-to-redux/
 
 ## React Router v4
 
+
 /src/index.js
+
 ```javascript
 ...
 import { BrowserRouter } from "react-router-dom"
@@ -34,6 +36,7 @@ ReactDOM.render(
 ```
 
 /src/App.js
+
 ```javascript
 ...
 import { Link, Route } from "react-router-dom";
@@ -53,6 +56,7 @@ import { Link, Route } from "react-router-dom";
 ## React Redux
 
 /src/index.js
+
 ```javascript
 ...
 import { Provider } from "react-redux"
@@ -68,6 +72,7 @@ ReactDOM.render(
 ```
 
 /src/States/Store/index.js
+
 ```javascript
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import logger from "redux-logger";
@@ -85,6 +90,7 @@ export const store = createStore(reducers, middleware);
 ## The Promise Way
 
 /src/Components/Comments/index.js
+
 ```javascript
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -121,6 +127,7 @@ export default connect(mapStateToProps, mapDisptachToProps)(Comments);
 ```
 
 /src/States/Actions/comments.js
+
 ```javascript
 
 ...
@@ -137,6 +144,7 @@ export function fetchComments() {
 ```
 
 /src/States/Reducers/comments.js
+
 ```javascript
 
 ...
@@ -162,6 +170,7 @@ export default commentsReducer;
 ```
 
 /src/States/Store/index.js
+
 ```javascript
 ...
 
@@ -178,6 +187,7 @@ import commentsReducer from '../Reducers/comments';
 ## Nothing but the Thunk
 
 /src/Components/Posts/index.js
+
 ```javascript
 
 ...
@@ -211,6 +221,7 @@ export default connect(mapStateToProps, mapDisptachToProps)(Posts);
 ```
 
 /src/States/Actions/posts.js
+
 ```javascript
 import {
     FETCH_POST_FAILURE,
@@ -239,6 +250,7 @@ import {
 ```
 
 /src/States/Reducers/posts.js
+
 ```javascript
 
 ...
@@ -262,6 +274,7 @@ const postsReducer = ( state = initPosts, action ) => {
 ```
 
 /src/States/Store/index.js
+
 ```javascript
 ...
 
